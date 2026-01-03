@@ -1,28 +1,105 @@
 // Configuration: place your images inside images/ folder and list their filenames here.
 const imageFolder = 'images/';
 const images = [
+  'g1.jpg',
+  'g10.jpg',
   'g2.jpg',
+  'g3.jpg',
+  'g4.jpg',
   'g5.jpg',
+  'g6.jpg',
+  'g7.jpg',
+  'g8.jpg',
   'g9.jpg',
+  'IMG_20251224_143349.jpg',
+  'IMG_20251224_143351.jpg',
+  'IMG_20251224_143355.jpg',
   'IMG_20251224_143357.jpg',
   'IMG_20251224_143815.jpg',
+  'IMG_20251224_143824.jpg',
+  'IMG_20251224_143827.jpg',
+  'IMG_20251224_143845.jpg',
+  'IMG_20251224_143847.jpg',
+  'IMG_20251224_143853.jpg',
   'IMG_20251224_143854.jpg',
   'IMG_20251224_144055.jpg',
+  'IMG_20251224_144103.jpg',
+  'IMG_20251224_144107.jpg',
+  'IMG_20251224_144930.jpg',
+  'IMG_20251224_144939.jpg',
+  'IMG_20251224_145033.jpg',
+  'IMG_20251224_145055.jpg',
+  'IMG_20251224_145116.jpg',
+  'IMG_20251224_145119.jpg',
   'IMG_20251224_145122.jpg',
+  'IMG_20251224_150107.jpg',
+  'IMG_20251224_150114.jpg',
+  'IMG_20251224_150137.jpg',
   'IMG_20251224_150203.jpg',
+  'IMG_20251224_150207.jpg',
   'IMG_20251224_154639.jpg',
   'IMG_20251224_154658.jpg',
   'IMG_20251224_154720.jpg',
   'IMG_20251224_155029.jpg',
   'IMG_20251224_155039.jpg',
+  'IMG_20251224_155115.jpg',
+  'IMG_20251224_155122.jpg',
+  'IMG_20251224_155124.jpg',
+  'IMG_20251224_155125.jpg',
+  'IMG_20251224_155127.jpg',
   'IMG_20251224_155139.jpg',
+  'IMG_20251224_155141.jpg',
+  'IMG_20251224_155143.jpg',
+  'IMG_20251224_155147.jpg',
+  'IMG_20251224_155248.jpg',
+  'IMG_20251224_155251.jpg',
   'IMG_20251224_155254.jpg',
+  'IMG_20251224_155316.jpg',
+  'IMG_20251224_155318.jpg',
+  'IMG_20251224_155323.jpg',
+  'IMG_20251224_155325.jpg',
+  'IMG_20251224_155326.jpg',
+  'IMG_20251224_155330.jpg',
+  'IMG_20251224_155331.jpg',
   'IMG_20251224_155339.jpg',
+  'IMG_20251224_155345.jpg',
+  'IMG_20251224_155347.jpg',
+  'IMG_20251224_155432.jpg',
+  'IMG_20251224_155433.jpg',
+  'IMG_20251224_155435.jpg',
+  'IMG_20251224_155436.jpg',
+  'IMG_20251224_155437.jpg',
+  'IMG_20251224_155455.jpg',
+  'IMG_20251224_155500.jpg',
+  'IMG_20251224_155502.jpg',
+  'IMG_20251224_155505.jpg',
+  'IMG_20251224_155533.jpg',
+  'IMG_20251224_155540.jpg',
+  'IMG_20251224_155543.jpg',
   'IMG_20251224_155545.jpg',
+  'IMG_20251224_155620.jpg',
+  'IMG_20251224_155621.jpg',
+  'IMG_20251224_155624.jpg',
+  'IMG_20251224_155625.jpg',
+  'IMG_20251224_155637.jpg',
+  'IMG_20251224_155639.jpg',
+  'IMG_20251224_155719.jpg',
   'IMG_20251224_155720.jpg',
   'IMG_20251224_160356.jpg',
+  'IMG_20251224_160402.jpg',
+  'IMG_20251224_160409.jpg',
+  'IMG_20251224_160410.jpg',
+  'IMG_20251224_160425.jpg',
+  'IMG_20251224_160449.jpg',
+  'IMG_20251224_160452.jpg',
+  'IMG_20251224_160454.jpg',
+  'IMG_20251224_160517.jpg',
+  'IMG_20251224_160525.jpg',
+  'IMG_20251224_160527.jpg',
   'IMG_20251224_160528.jpg',
-  'IMG_20251224_160541.jpg'
+  'IMG_20251224_160541.jpg',
+  'IMG_20251224_160543.jpg',
+  'IMG_20251224_160547.jpg'
 ];
 
 // Carousel: create slides from images array
@@ -31,13 +108,25 @@ const slidesContainer = document.createElement('div');
 slidesContainer.className = 'slides';
 carousel.appendChild(slidesContainer);
 
+// choose a fallback image that actually exists in the images folder
+const FALLBACK_IMAGE = 'g2.jpg';
+
 images.forEach((name, i) => {
   const slide = document.createElement('div');
   slide.className = 'slide';
   slide.dataset.index = i;
   const img = document.createElement('img');
-  img.src = `${imageFolder}${name}`;
   img.alt = `Slide ${i+1}`;
+  // set src and attach error handler to replace missing images with a fallback
+  img.src = `${imageFolder}${name}`;
+  img.addEventListener('error', () => {
+    if (!img.dataset.fallbackSet) {
+      img.dataset.fallbackSet = '1';
+      img.src = `${imageFolder}${FALLBACK_IMAGE}`;
+      img.classList.add('placeholder');
+    }
+  }, {once: true});
+
   slide.appendChild(img);
   slidesContainer.appendChild(slide);
 });
