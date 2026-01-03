@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Countdown + Slider (Jan 1 2026 → Jun 30 2026)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <main class="container">
+    <h1 class="title">FINALE</h1>
+
+    <section class="countdown" aria-live="polite">
+      <div class="timebox">
+        <div id="months" class="value">0</div>
+        <div class="label">Months</div>
+      </div>
+      <div class="timebox">
+        <div id="days" class="value">0</div>
+        <div class="label">Days</div>
+      </div>
+      <div class="timebox">
+        <div id="hours" class="value">0</div>
+        <div class="label">Hours</div>
+      </div>
+      <div class="timebox">
+        <div id="minutes" class="value">0</div>
+        <div class="label">Minutes</div>
+      </div>
+      <div class="timebox">
+        <div id="seconds" class="value">0</div>
+        <div class="label">Seconds</div>
+      </div>
+    </section>
+
+    <section class="carousel-wrap">
+      <div id="carousel" class="carousel">
+        <!-- Slides injected by JS or can be placed here as <img> tags -->
+      </div>
+    </section>
+
+    <!-- Background audio: place a file at audio/track.mp3 -->
+      <audio id="bg-audio" src="track.mp3" preload="auto"></audio>
+
+    <footer class="footer">CSE <strong>57 E</strong></footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
