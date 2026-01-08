@@ -1,20 +1,23 @@
-:root{--bg:#0b1220;--card:#0f1724;--muted:#98a0b3;--accent:#6ee7b7;--glass:rgba(255,255,255,0.03)}*{box-sizing:border-box}html,body{height:100vh;overflow:hidden}body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#04050a 0%,#0b1220 60%);color:#e6eef8}
+:root{--bg:#0b1220;--card:#0f1724;--muted:#98a0b3;--accent:#6ee7b7;--glass:rgba(255,255,255,0.03)}*{box-sizing:border-box}html,body{height:100vh;overflow:hidden;margin:0;padding:0}body{font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#04050a 0%,#0b1220 60%);color:#e6eef8}
 /* #dots-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none} */
-.container{width:100%;max-width:1100px;padding:28px;position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.title{text-align:center;font-weight:600;margin-bottom:18px}
-.countdown{display:flex;gap:14px;justify-content:center;align-items:center;margin-bottom:28px;flex-wrap:wrap}
-.timebox{background:var(--glass);backdrop-filter:blur(6px);padding:12px 14px;border-radius:12px;text-align:center;min-width:76px}
-.value{font-size:clamp(18px,4.2vw,34px);font-weight:700;color:var(--accent)}
-.label{font-size:clamp(11px,1.6vw,14px);color:var(--muted);margin-top:6px}
+.container{width:100%;max-width:100%;padding:clamp(16px,5vw,28px);position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.logo-wrapper{display:flex;justify-content:center;align-items:center;margin-bottom:clamp(0.1px,0.2vw,0.1px)}
+.logo{width:clamp(60px,100vw,140px);height:clamp(60px,100vw,140px);border-radius:clamp(8px,2vw,16px);object-fit:cover;box-shadow:0 8px 24px rgba(2,6,23,0.8);animation:fadeInLogo 0.8s ease-out}
+@keyframes fadeInLogo{from{opacity:0;transform:scale(0.9)} to{opacity:1;transform:scale(1)}}
+.title{text-align:center;font-weight:600;margin-bottom:clamp(14px,3vw,18px);font-size:clamp(24px,6vw,42px)}
+.countdown{display:flex;gap:clamp(6px,2vw,14px);justify-content:center;align-items:center;margin-bottom:clamp(20px,4vw,28px);flex-wrap:wrap}
+.timebox{background:var(--glass);backdrop-filter:blur(6px);padding:clamp(8px,2vw,12px) clamp(10px,2vw,14px);border-radius:clamp(8px,2vw,12px);text-align:center;min-width:clamp(56px,12vw,76px);border:1px solid rgba(255,255,255,0.06)}
+.value{font-size:clamp(14px,3.5vw,34px);font-weight:700;color:var(--accent)}
+.label{font-size:clamp(9px,1.2vw,14px);color:var(--muted);margin-top:clamp(4px,1vw,6px)}
 
 .carousel-wrap{display:flex;justify-content:center}
-.container{position:relative;min-height:520px}
+.container{position:relative;min-height:clamp(300px,60vh,520px)}
 .carousel-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-.carousel{position:relative;width:100%;max-width:1100px;height:520px;overflow:visible;border-radius:14px;z-index:1;transform:translateZ(0);opacity:0.36;filter:blur(2px) saturate(110%)}
+.carousel{position:relative;width:100%;max-width:1100px;height:clamp(300px,60vh,520px);overflow:visible;border-radius:clamp(10px,2vw,14px);z-index:1;transform:translateZ(0);opacity:0.36;filter:blur(2px) saturate(110%)}
 .slides{display:flex;align-items:center;height:100%;transition:none}
 /* fluid slide sizing for responsiveness */
-.slide{flex:0 0 clamp(260px,30vw,520px);max-width:clamp(260px,30vw,520px);display:flex;align-items:center;justify-content:center;padding:12px}
-.slide img{width:100%;height:clamp(220px,32vw,420px);object-fit:cover;border-radius:10px;box-shadow:0 14px 50px rgba(2,6,23,0.6);border:2px solid rgba(255,255,255,0.04)}
+.slide{flex:0 0 clamp(180px,25vw,520px);max-width:clamp(180px,25vw,520px);display:flex;align-items:center;justify-content:center;padding:clamp(6px,1.5vw,12px)}
+.slide img{width:100%;height:clamp(160px,25vh,420px);object-fit:cover;border-radius:clamp(8px,1.5vw,10px);box-shadow:0 14px 50px rgba(2,6,23,0.6);border:2px solid rgba(255,255,255,0.04)}
 
 /* Visual positions: left, center, right */
 .slide.left{transform:translateX(-30%) scale(0.78);opacity:0.9;max-width:30%}
@@ -24,34 +27,64 @@
 /* Hide extra slides */
 .slide.hidden{opacity:0;transform:scale(0.85) translateX(0);max-width:0;padding:0;margin:0}
 
-.footer{color:var(--muted);text-align:center;margin-top:18px;font-size:13px}
+.footer{color:var(--muted);text-align:center;margin-top:clamp(14px,3vw,18px);font-size:clamp(11px,1.5vw,13px)}
 
 /* audio toggle button (small, top-right of container) */
-.audio-toggle{position:absolute;top:18px;right:18px;z-index:4;background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:8px 10px;border-radius:10px;backdrop-filter:blur(6px);cursor:pointer}
+.audio-toggle{position:absolute;top:clamp(12px,3vw,18px);right:clamp(12px,3vw,18px);z-index:4;background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:clamp(6px,1.5vw,8px) clamp(8px,1.5vw,10px);border-radius:clamp(8px,1.5vw,10px);backdrop-filter:blur(6px);cursor:pointer;font-size:clamp(11px,1.5vw,14px)}
 .audio-toggle:hover{opacity:0.95}
 .audio-toggle[aria-pressed="true"]{background:rgba(110,231,183,0.12);color:var(--accent)}
 
 /* countdown foreground so it sits above the carousel */
 .countdown{position:relative;z-index:2}
-.timebox{border:1px solid rgba(255,255,255,0.06)}
 
-/* reduce slide sizes on small screens while keeping center behind countdown */
-@media (max-width:900px){
-	.carousel{height:420px;opacity:0.34}
-	.slide{flex:0 0 clamp(220px,36vw,380px);max-width:clamp(220px,36vw,380px)}
-	.slide img{height:clamp(180px,28vw,300px)}
+/* Large screens (1200px and above) */
+@media (min-width:1200px){
+	.carousel{height:520px;opacity:0.36}
+	.slide{flex:0 0 clamp(260px,30vw,520px);max-width:clamp(260px,30vw,520px)}
+	.slide img{height:clamp(220px,32vw,420px)}
 }
 
-@media (max-width:720px){
-	/* keep countdown centered on mobile as well */
-	body{align-items:center}
-	.container{padding:16px}
-	.title{font-size:clamp(18px,5vw,24px)}
-	.carousel{height:260px;opacity:0.28}
+/* Medium-large screens (992px to 1199px) */
+@media (max-width:1199px) and (min-width:992px){
+	.carousel{height:480px;opacity:0.35}
+	.slide{flex:0 0 clamp(240px,28vw,480px);max-width:clamp(240px,28vw,480px)}
+	.slide img{height:clamp(200px,30vw,380px)}
+}
+
+/* Medium screens (768px to 991px) */
+@media (max-width:991px) and (min-width:768px){
+	.carousel{height:400px;opacity:0.34}
+	.slide{flex:0 0 clamp(220px,32vw,400px);max-width:clamp(220px,32vw,400px)}
+	.slide img{height:clamp(180px,28vw,340px)}
+	.countdown{gap:clamp(8px,2vw,12px)}
+	.timebox{min-width:clamp(60px,11vw,75px);padding:clamp(8px,1.5vw,11px) clamp(10px,1.5vw,13px)}
+}
+
+/* Small screens (480px to 767px) */
+@media (max-width:767px) and (min-width:480px){
+	.carousel{height:300px;opacity:0.30}
 	.slide.left,.slide.right{display:none}
-	.slide{flex-basis:100%;max-width:100%;padding:6px;height:100%}
-	.slide img{height:180px}
+	.slide{flex:0 0 100%;max-width:100%;padding:clamp(4px,1.5vw,6px)}
+	.slide img{height:clamp(240px,50vh,300px)}
+	.countdown{gap:clamp(6px,1.5vw,10px)}
+	.timebox{min-width:clamp(50px,10vw,65px);padding:clamp(7px,1.5vw,10px) clamp(8px,1.5vw,11px)}
+	.value{font-size:clamp(12px,2.5vw,20px)}
+	.label{font-size:clamp(8px,1vw,11px)}
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width:479px){
+	body{align-items:center;justify-content:center}
+	.container{padding:clamp(12px,4vw,16px);min-height:100vh}
+	.title{font-size:clamp(20px,5vw,24px);margin-bottom:clamp(12px,2vw,16px)}
+	.carousel{height:clamp(240px,45vh,280px);opacity:0.26}
+	.slide.left,.slide.right{display:none}
+	.slide{flex:0 0 100%;max-width:100%;padding:clamp(3px,1vw,5px)}
+	.slide img{height:clamp(220px,40vh,260px)}
 	.carousel-wrap{pointer-events:none}
-	.countdown{gap:8px}
-	.timebox{min-width:64px;padding:10px}
+	.countdown{gap:clamp(4px,1vw,8px);margin-bottom:clamp(16px,3vw,20px)}
+	.timebox{min-width:clamp(45px,9vw,55px);padding:clamp(6px,1.2vw,8px) clamp(7px,1.2vw,9px)}
+	.value{font-size:clamp(11px,2.2vw,16px)}
+	.label{font-size:clamp(7px,0.9vw,9px)}
+	.footer{font-size:clamp(10px,1.2vw,12px)}
 }

@@ -1,105 +1,51 @@
 // Configuration: place your images inside images/ folder and list their filenames here.
 const imageFolder = 'images/';
 const images = [
-  'g1.jpg',
-  'g10.jpg',
-  'g2.jpg',
-  'g3.jpg',
-  'g4.jpg',
-  'g5.jpg',
-  'g6.jpg',
-  'g7.jpg',
-  'g8.jpg',
-  'g9.jpg',
-  'IMG_20251224_143349.jpg',
-  'IMG_20251224_143351.jpg',
-  'IMG_20251224_143355.jpg',
-  'IMG_20251224_143357.jpg',
-  'IMG_20251224_143815.jpg',
-  'IMG_20251224_143824.jpg',
-  'IMG_20251224_143827.jpg',
-  'IMG_20251224_143845.jpg',
-  'IMG_20251224_143847.jpg',
-  'IMG_20251224_143853.jpg',
-  'IMG_20251224_143854.jpg',
-  'IMG_20251224_144055.jpg',
-  'IMG_20251224_144103.jpg',
-  'IMG_20251224_144107.jpg',
-  'IMG_20251224_144930.jpg',
-  'IMG_20251224_144939.jpg',
-  'IMG_20251224_145033.jpg',
-  'IMG_20251224_145055.jpg',
-  'IMG_20251224_145116.jpg',
-  'IMG_20251224_145119.jpg',
-  'IMG_20251224_145122.jpg',
-  'IMG_20251224_150107.jpg',
-  'IMG_20251224_150114.jpg',
-  'IMG_20251224_150137.jpg',
-  'IMG_20251224_150203.jpg',
-  'IMG_20251224_150207.jpg',
-  'IMG_20251224_154639.jpg',
-  'IMG_20251224_154658.jpg',
-  'IMG_20251224_154720.jpg',
-  'IMG_20251224_155029.jpg',
-  'IMG_20251224_155039.jpg',
-  'IMG_20251224_155115.jpg',
-  'IMG_20251224_155122.jpg',
-  'IMG_20251224_155124.jpg',
-  'IMG_20251224_155125.jpg',
-  'IMG_20251224_155127.jpg',
-  'IMG_20251224_155139.jpg',
-  'IMG_20251224_155141.jpg',
-  'IMG_20251224_155143.jpg',
-  'IMG_20251224_155147.jpg',
-  'IMG_20251224_155248.jpg',
-  'IMG_20251224_155251.jpg',
-  'IMG_20251224_155254.jpg',
-  'IMG_20251224_155316.jpg',
-  'IMG_20251224_155318.jpg',
-  'IMG_20251224_155323.jpg',
-  'IMG_20251224_155325.jpg',
-  'IMG_20251224_155326.jpg',
-  'IMG_20251224_155330.jpg',
-  'IMG_20251224_155331.jpg',
-  'IMG_20251224_155339.jpg',
-  'IMG_20251224_155345.jpg',
-  'IMG_20251224_155347.jpg',
-  'IMG_20251224_155432.jpg',
-  'IMG_20251224_155433.jpg',
-  'IMG_20251224_155435.jpg',
-  'IMG_20251224_155436.jpg',
-  'IMG_20251224_155437.jpg',
-  'IMG_20251224_155455.jpg',
-  'IMG_20251224_155500.jpg',
-  'IMG_20251224_155502.jpg',
-  'IMG_20251224_155505.jpg',
-  'IMG_20251224_155533.jpg',
-  'IMG_20251224_155540.jpg',
-  'IMG_20251224_155543.jpg',
-  'IMG_20251224_155545.jpg',
-  'IMG_20251224_155620.jpg',
-  'IMG_20251224_155621.jpg',
-  'IMG_20251224_155624.jpg',
-  'IMG_20251224_155625.jpg',
-  'IMG_20251224_155637.jpg',
-  'IMG_20251224_155639.jpg',
-  'IMG_20251224_155719.jpg',
-  'IMG_20251224_155720.jpg',
-  'IMG_20251224_160356.jpg',
-  'IMG_20251224_160402.jpg',
-  'IMG_20251224_160409.jpg',
-  'IMG_20251224_160410.jpg',
-  'IMG_20251224_160425.jpg',
-  'IMG_20251224_160449.jpg',
-  'IMG_20251224_160452.jpg',
-  'IMG_20251224_160454.jpg',
-  'IMG_20251224_160517.jpg',
-  'IMG_20251224_160525.jpg',
-  'IMG_20251224_160527.jpg',
-  'IMG_20251224_160528.jpg',
-  'IMG_20251224_160541.jpg',
-  'IMG_20251224_160543.jpg',
-  'IMG_20251224_160547.jpg'
+  'IMG (1).jpg',
+  'IMG (2).jpg',
+  'IMG (4).jpg',
+  'IMG (5).jpg',
+  'IMG (6).jpg',
+  'IMG (7).jpg',
+  'IMG (8).jpg',
+  'IMG (9).jpg',
+  'IMG (10).jpg',
+  'IMG (11).jpg',
+  'IMG (12).jpg',
+  'IMG (13).jpg',
+  'IMG (14).jpg',
+  'IMG (15).jpg',
+  'IMG (16).jpg',
+  'IMG (17).jpg',
+  'IMG (18).jpg',
+  'IMG (19).jpg',
+  'IMG (20).jpg',
+  'IMG (21).jpg',
+  'IMG (22).jpg',
+  'IMG (23).jpg',
+  'IMG (24).jpg',
+  'IMG (25).jpg',
+  'IMG (26).jpg',
+  'IMG (27).jpg',
+  'IMG (28).jpg',
+  'IMG (29).JPG',
+  'IMG (30).JPG',
+  'IMG (31).jpg',
+  'IMG (32).jpg',
+  'IMG (33).jpg',
+  'IMG (34).jpg',
+  'IMG (35).JPG',
+  'IMG (36).JPG',
+  'IMG (37).jpg',
+  'IMG (38).JPG',
+  'IMG (39).JPG',
+  'IMG (40).jpg',
+  'IMG (41).JPG',
+  'IMG (42).jpg',
+  'IMG (43).jpg',
+  'IMG (44).jpg',
+  'IMG (45).jpg',
+  'IMG (46).jpg'
 ];
 
 // Carousel: create slides from images array
@@ -109,7 +55,7 @@ slidesContainer.className = 'slides';
 carousel.appendChild(slidesContainer);
 
 // choose a fallback image that actually exists in the images folder
-const FALLBACK_IMAGE = 'g2.jpg';
+const FALLBACK_IMAGE = 'IMG (1).jpg';
 
 images.forEach((name, i) => {
   const slide = document.createElement('div');
@@ -159,8 +105,17 @@ function step(ts){
   requestAnimationFrame(step);
 }
 
+// Reset animation on window resize for responsive behavior
+function resetCarouselAnimation(){
+  scrollOffset = 0;
+  lastTimestamp = null;
+}
+
 // start the loop when images have loaded sizes
 window.addEventListener('load', ()=> requestAnimationFrame(step));
+
+// handle window resize for responsive carousel
+window.addEventListener('resize', resetCarouselAnimation);
 
 // keep pointer-events none so background doesn't block interactions
 carousel.style.pointerEvents = 'none';
@@ -236,7 +191,7 @@ const audioEl = document.getElementById('bg-audio');
 if (audioEl) {
   audioEl.loop = true; // nonstop
   audioEl.preload = 'auto';
-  audioEl.volume = 0.02; // 1% volume
+  audioEl.volume = 0.50; // 1% volume
 
   // Try autoplay on load; if blocked, start on first user interaction
   async function tryStartAudio() {
